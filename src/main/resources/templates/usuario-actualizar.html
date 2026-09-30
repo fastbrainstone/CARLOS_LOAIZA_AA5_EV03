@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Actualizar Usuario</title>
+
+    <link rel="stylesheet" th:href="@{/css/estilos.css}">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="nav-left">
+
+            <div class="logo">
+                Pilosos
+            </div>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a th:href="@{/usuarios}">
+                        Inicio
+                    </a>
+                </li>
+
+                <li>
+                    <a th:href="@{/usuarios/consultar}">
+                        Usuarios
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+
+    <main class="container">
+
+        <section class="form-section">
+
+            <form class="register-form"
+                  th:action="@{/usuarios/actualizar}"
+                  th:object="${usuario}"
+                  method="post">
+
+                <h3>Actualizar Usuario</h3>
+
+
+                <!-- ID -->
+                <div class="input-group">
+
+                    <i>🆔</i>
+
+                    <input type="number"
+                           th:field="*{idUsuario}"
+                           readonly>
+
+                </div>
+
+
+                <!-- Tipo ID -->
+                <div class="input-group">
+
+                    <i>🪪</i>
+
+                    <input type="text"
+                           th:field="*{tipoId}"
+                           maxlength="15"
+                           placeholder="Tipo de identificación">
+
+                </div>
+
+                <div class="error-message"
+                     th:if="${#fields.hasErrors('tipoId')}"
+                     th:errors="*{tipoId}">
+                </div>
+
+
+                <!-- Nombre -->
+                <div class="input-group">
+
+                    <i>👤</i>
+
+                    <input type="text"
+                           th:field="*{nombreUsuario}"
+                           maxlength="30"
+                           placeholder="Nombre">
+
+                </div>
+
+                <div class="error-message"
+                     th:if="${#fields.hasErrors('nombreUsuario')}"
+                     th:errors="*{nombreUsuario}">
+                </div>
+
+
+                <!-- Apellido -->
+                <div class="input-group">
+
+                    <i>👤</i>
+
+                    <input type="text"
+                           th:field="*{apellidoUsuario}"
+                           maxlength="30"
+                           placeholder="Apellido">
+
+                </div>
+
+                <div class="error-message"
+                     th:if="${#fields.hasErrors('apellidoUsuario')}"
+                     th:errors="*{apellidoUsuario}">
+                </div>
+
+
+                <!-- Correo -->
+                <div class="input-group">
+
+                    <i>✉</i>
+
+                    <input type="email"
+                           th:field="*{correoUsuario}"
+                           maxlength="255"
+                           placeholder="Correo electrónico">
+
+                </div>
+
+                <div class="error-message"
+                     th:if="${#fields.hasErrors('correoUsuario')}"
+                     th:errors="*{correoUsuario}">
+                </div>
+
+
+                <button type="submit"
+                        class="btn-submit">
+
+                    Actualizar Usuario
+
+                </button>
+
+                <br><br>
+
+                <a class="btn-secondary"
+                   th:href="@{/usuarios/consultar}">
+
+                    Cancelar
+
+                </a>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-links">
+
+            <a th:href="@{/usuarios}">
+                Inicio
+            </a>
+
+            <a th:href="@{/usuarios/consultar}">
+                Usuarios
+            </a>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

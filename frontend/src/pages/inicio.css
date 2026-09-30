@@ -1,0 +1,511 @@
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.inicio {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================
+   BARRA DE NAVEGACIÓN
+========================================= */
+
+.navbar {
+    width: 100%;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0078d7;
+    text-decoration: none;
+}
+
+
+/* Parte izquierda */
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+
+/* Menú */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #0078d7;
+}
+
+
+/* =========================================
+   MENÚ EXPLORAR
+========================================= */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown > span {
+    color: #333;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.dropdown > span:hover {
+    color: #0078d7;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    background-color: #ffffff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    padding: 5px 0;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    color: #333 !important;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    color: #0078d7 !important;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* =========================================
+   PARTE DERECHA DEL NAVBAR
+========================================= */
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.login-button {
+    text-decoration: none;
+    color: #0078d7;
+    font-weight: 600;
+}
+
+.login-button:hover {
+    color: #005fa3;
+}
+
+.register-button {
+    background-color: #0078d7;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+    background-color: #005fa3;
+}
+
+
+/* =========================================
+   CONTENIDO PRINCIPAL
+========================================= */
+
+main {
+    flex: 1;
+}
+
+
+/* =========================================
+   SECCIÓN PRINCIPAL / HERO
+========================================= */
+
+.hero {
+    min-height: 480px;
+    padding: 60px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    background-color: #ffffff;
+}
+
+.hero-text {
+    max-width: 550px;
+}
+
+.welcome {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    background-color: #e6f5ff;
+    color: #0078d7;
+    font-weight: 600;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 2.8rem;
+    line-height: 1.2;
+    color: #333;
+}
+
+.hero h1 span {
+    color: #0078d7;
+}
+
+.hero p {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #666;
+}
+
+
+/* =========================================
+   BOTONES DEL HERO
+========================================= */
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.main-button,
+.secondary-button {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.main-button {
+    background-color: #0078d7;
+    color: #ffffff;
+}
+
+.main-button:hover {
+    background-color: #005fa3;
+}
+
+.secondary-button {
+    background-color: #ffffff;
+    color: #0078d7;
+    border: 1px solid #0078d7;
+}
+
+.secondary-button:hover {
+    background-color: #f0f8ff;
+}
+
+
+/* =========================================
+   ILUSTRACIÓN
+========================================= */
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.planet {
+    width: 260px;
+    height: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #e6f5ff;
+    color: #0078d7;
+    box-shadow: 0 4px 20px rgba(0, 120, 215, 0.15);
+}
+
+
+/* =========================================
+   SECCIÓN DE CARACTERÍSTICAS
+========================================= */
+
+.features {
+    padding: 60px 8%;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.features h2 {
+    margin-bottom: 10px;
+    font-size: 2rem;
+    color: #333;
+}
+
+.features-text {
+    margin-bottom: 35px;
+    color: #666;
+    font-size: 1.05rem;
+}
+
+
+/* =========================================
+   TARJETAS
+========================================= */
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 300px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    background-color: #e6f5ff;
+    color: #0078d7;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 1.3rem;
+}
+
+.card p {
+    margin-bottom: 15px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.card a {
+    color: #0078d7;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.card a:hover {
+    color: #005fa3;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #f0f0f0;
+    border-top: 1px solid #ddd;
+    color: #555;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        padding: 20px 4%;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .hero {
+        padding: 50px 6%;
+        gap: 30px;
+    }
+
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .planet {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-left {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-buttons {
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 6%;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-image {
+        margin-top: 20px;
+    }
+
+    .features {
+        padding: 50px 5%;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .navbar {
+        padding: 15px 4%;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .nav-links {
+        gap: 10px;
+        font-size: 14px;
+    }
+
+    .nav-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .register-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .planet {
+        width: 180px;
+        height: 180px;
+    }
+
+    .features h2 {
+        font-size: 1.6rem;
+    }
+}

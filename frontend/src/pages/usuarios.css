@@ -1,0 +1,567 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.usuarios-page {
+    min-height: 100vh;
+    background: #ffffff;
+    color: #1f2937;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 60px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+
+    gap: 42px;
+}
+
+.logo {
+    text-decoration: none;
+
+    font-size: 28px;
+    font-weight: 800;
+
+    color: #0078d7;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+}
+
+.nav-links a,
+.dropdown-btn {
+    text-decoration: none;
+
+    color: #374151;
+
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #0078d7;
+}
+
+
+/* =========================================
+   DROPDOWN
+========================================= */
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-btn {
+    background: none;
+    border: none;
+
+    cursor: pointer;
+
+    font-family: inherit;
+}
+
+.dropdown-content {
+    display: none;
+
+    position: absolute;
+
+    top: 28px;
+    left: 0;
+
+    min-width: 190px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.08);
+
+    padding: 8px 0;
+
+    z-index: 10;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+
+    padding: 10px 16px;
+}
+
+.dropdown-content a:hover {
+    background: #f0f7ff;
+}
+
+
+/* =========================================
+   BOTÓN VOLVER
+========================================= */
+
+.btn-volver {
+    text-decoration: none;
+
+    padding: 10px 20px;
+
+    background: #0078d7;
+
+    color: #ffffff !important;
+
+    border-radius: 7px;
+
+    font-weight: 600 !important;
+}
+
+.btn-volver:hover {
+    background: #0068bd;
+}
+
+
+/* =========================================
+   CONTENEDOR
+========================================= */
+
+.usuarios-container {
+    width: 90%;
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    padding: 50px 0 70px;
+}
+
+
+/* =========================================
+   ENCABEZADO
+========================================= */
+
+.usuarios-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 30px;
+}
+
+.usuarios-header h1 {
+    margin: 0 0 8px;
+
+    color: #1f2937;
+
+    font-size: 32px;
+}
+
+.usuarios-header p {
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 16px;
+}
+
+
+/* =========================================
+   BOTÓN ACTUALIZAR
+========================================= */
+
+.btn-recargar {
+    border: none;
+
+    background: #0078d7;
+
+    color: #ffffff;
+
+    padding: 11px 20px;
+
+    border-radius: 7px;
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+.btn-recargar:hover {
+    background: #0068bd;
+}
+
+
+/* =========================================
+   PANEL EDITAR
+========================================= */
+
+.editar-panel {
+    background: #f8fbff;
+
+    border: 1px solid #dbeafe;
+
+    border-radius: 12px;
+
+    padding: 28px;
+
+    margin-bottom: 30px;
+}
+
+.editar-panel h2 {
+    margin: 0 0 6px;
+
+    font-size: 24px;
+
+    color: #1f2937;
+}
+
+.editar-panel p {
+    margin: 0 0 24px;
+
+    color: #6b7280;
+}
+
+
+/* =========================================
+   FORMULARIO
+========================================= */
+
+.editar-form {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.campo {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.campo label {
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #374151;
+}
+
+.campo input {
+    width: 100%;
+
+    padding: 11px 13px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 7px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+.campo input:focus {
+    border-color: #0078d7;
+
+    box-shadow:
+        0 0 0 3px rgba(0, 120, 215, 0.10);
+}
+
+
+/* =========================================
+   BOTONES DEL FORMULARIO
+========================================= */
+
+.editar-botones {
+    grid-column: 1 / -1;
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 5px;
+}
+
+.btn-guardar,
+.btn-cancelar {
+    border: none;
+
+    border-radius: 7px;
+
+    padding: 11px 20px;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-weight: 600;
+}
+
+.btn-guardar {
+    background: #0078d7;
+
+    color: #ffffff;
+}
+
+.btn-guardar:hover {
+    background: #0068bd;
+}
+
+.btn-cancelar {
+    background: #e5e7eb;
+
+    color: #374151;
+}
+
+.btn-cancelar:hover {
+    background: #d1d5db;
+}
+
+
+/* =========================================
+   TABLA
+========================================= */
+
+.tabla-container {
+    width: 100%;
+
+    overflow-x: auto;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.usuarios-table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+.usuarios-table th {
+    background: #0078d7;
+
+    color: #ffffff;
+
+    padding: 15px 12px;
+
+    text-align: left;
+
+    font-size: 14px;
+}
+
+.usuarios-table td {
+    padding: 14px 12px;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    font-size: 14px;
+}
+
+.usuarios-table tbody tr:hover {
+    background: #f8fbff;
+}
+
+.usuarios-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================
+   BOTÓN EDITAR
+========================================= */
+
+.btn-editar {
+    border: none;
+
+    padding: 8px 12px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    margin-right: 6px;
+
+    font-family: inherit;
+
+    background: #e8f3ff;
+
+    color: #0078d7;
+}
+
+.btn-editar:hover {
+    background: #d6ebff;
+}
+
+
+/* =========================================
+   BOTÓN ELIMINAR
+========================================= */
+
+.btn-eliminar {
+    border: none;
+
+    padding: 8px 12px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    font-family: inherit;
+
+    background: #feecec;
+
+    color: #dc2626;
+}
+
+.btn-eliminar:hover {
+    background: #fddada;
+}
+
+
+/* =========================================
+   MENSAJES
+========================================= */
+
+.mensaje-cargando,
+.mensaje-vacio {
+    padding: 40px;
+
+    text-align: center;
+
+    background: #f8fbff;
+
+    border-radius: 10px;
+
+    color: #6b7280;
+
+    font-size: 16px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    padding: 25px;
+
+    text-align: center;
+
+    border-top: 1px solid #e5e7eb;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 0 25px;
+    }
+
+    .nav-left {
+        gap: 20px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .editar-form {
+        grid-template-columns: 1fr;
+    }
+
+    .editar-botones {
+        grid-column: auto;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .navbar {
+        height: auto;
+
+        padding: 20px;
+
+        flex-direction: column;
+
+        gap: 18px;
+    }
+
+    .nav-left {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .usuarios-container {
+        width: 94%;
+
+        padding-top: 30px;
+    }
+
+    .usuarios-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+}

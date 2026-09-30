@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Eliminar Usuario</title>
+
+    <link rel="stylesheet" th:href="@{/css/estilos.css}">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="nav-left">
+
+            <div class="logo">
+                Pilosos
+            </div>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a th:href="@{/usuarios}">
+                        Inicio
+                    </a>
+                </li>
+
+                <li>
+                    <a th:href="@{/usuarios/consultar}">
+                        Usuarios
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+
+    <main class="container">
+
+        <section class="form-section">
+
+            <form class="register-form"
+                  th:action="@{/usuarios/eliminar/buscar}"
+                  method="post">
+
+                <h3>Eliminar Usuario</h3>
+
+                <div class="input-group">
+
+                    <i>🆔</i>
+
+                    <input type="number"
+                           name="idUsuario"
+                           placeholder="ID del usuario"
+                           required>
+
+                </div>
+
+                <button type="submit"
+                        class="btn-submit">
+
+                    Buscar Usuario
+
+                </button>
+
+            </form>
+
+
+            <div class="message"
+                 th:if="${mensaje}">
+
+                <span th:text="${mensaje}"></span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-links">
+
+            <a th:href="@{/usuarios}">
+                Inicio
+            </a>
+
+            <a th:href="@{/usuarios/consultar}">
+                Usuarios
+            </a>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

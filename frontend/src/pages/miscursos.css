@@ -1,0 +1,321 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #ffffff;
+    color: #1f2937;
+}
+
+.mis-cursos-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    height: 72px;
+    padding: 0 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+.logo {
+    text-decoration: none;
+    font-size: 27px;
+    font-weight: 800;
+    color: #0078d7;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #374151;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #0078d7;
+}
+
+
+/* =========================
+   DROPDOWN
+========================= */
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-btn {
+    border: none;
+    background: transparent;
+    color: #374151;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 8px 0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 38px;
+    left: 0;
+    min-width: 190px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    padding: 8px 0;
+    z-index: 10;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px 15px;
+    color: #374151;
+}
+
+.dropdown-content a:hover {
+    background: #f1f7ff;
+    color: #0078d7;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* =========================
+   BOTÓN CERRAR SESIÓN
+========================= */
+
+.btn-cerrar {
+    border: 1px solid #0078d7;
+    background: #ffffff;
+    color: #0078d7;
+    padding: 9px 18px;
+    border-radius: 7px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-cerrar:hover {
+    background: #0078d7;
+    color: #ffffff;
+}
+
+
+/* =========================
+   CONTENIDO
+========================= */
+
+.mis-cursos-container {
+    flex: 1;
+    width: 100%;
+}
+
+
+/* =========================
+   BIENVENIDA
+========================= */
+
+.bienvenida {
+    padding: 55px 80px 35px;
+    background: #f7fbff;
+}
+
+.bienvenida h1 {
+    margin: 0 0 10px;
+    font-size: 36px;
+    color: #1f2937;
+}
+
+.bienvenida p {
+    margin: 5px 0;
+    font-size: 19px;
+    color: #374151;
+}
+
+.bienvenida-texto {
+    font-size: 15px !important;
+    color: #6b7280 !important;
+}
+
+
+/* =========================
+   CURSOS
+========================= */
+
+.cursos-section {
+    padding: 45px 80px 70px;
+}
+
+.section-header h2 {
+    margin: 0 0 8px;
+    font-size: 28px;
+    color: #1f2937;
+}
+
+.section-header p {
+    margin: 0 0 30px;
+    color: #6b7280;
+    font-size: 15px;
+}
+
+.cursos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.curso-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.curso-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+}
+
+.curso-icon {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.curso-card h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    color: #1f2937;
+}
+
+.curso-card p {
+    min-height: 50px;
+    margin: 0 0 20px;
+    color: #6b7280;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.btn-curso {
+    border: none;
+    background: #0078d7;
+    color: #ffffff;
+    padding: 10px 18px;
+    border-radius: 7px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-curso:hover {
+    background: #0069bd;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    padding: 22px;
+    text-align: center;
+    background: #ffffff;
+    border-top: 1px solid #e5e7eb;
+    color: #6b7280;
+    font-size: 13px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 0 25px;
+    }
+
+    .nav-left {
+        gap: 20px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .bienvenida,
+    .cursos-section {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+
+    .cursos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .navbar {
+        height: auto;
+        padding: 18px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-left {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .bienvenida {
+        padding: 35px 20px;
+    }
+
+    .bienvenida h1 {
+        font-size: 29px;
+    }
+
+    .cursos-section {
+        padding: 35px 20px;
+    }
+}

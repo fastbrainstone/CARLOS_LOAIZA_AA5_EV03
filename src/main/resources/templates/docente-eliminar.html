@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Confirmar eliminación</title>
+
+    <link rel="stylesheet" th:href="@{/css/estilos.css}">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="nav-left">
+
+            <div class="logo">
+                Pilosos
+            </div>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a th:href="@{/docentes}">
+                        Inicio
+                    </a>
+                </li>
+
+                <li>
+                    <a th:href="@{/docentes/consultar}">
+                        Docentes
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+
+    <main class="crud-container">
+
+        <div class="confirmation-card">
+
+            <h2>Confirmar eliminación</h2>
+
+            <p>
+                ¿Está seguro de que desea eliminar este docente?
+            </p>
+
+            <br>
+
+
+            <p>
+
+                <strong>ID:</strong>
+
+                <span th:text="${docente.idDocente}">
+                </span>
+
+            </p>
+
+
+            <p>
+
+                <strong>Nombre:</strong>
+
+                <span th:text="${docente.usuario.nombreUsuario}">
+                </span>
+
+            </p>
+
+
+            <p>
+
+                <strong>Apellido:</strong>
+
+                <span th:text="${docente.usuario.apellidoUsuario}">
+                </span>
+
+            </p>
+
+
+            <p>
+
+                <strong>Correo:</strong>
+
+                <span th:text="${docente.usuario.correoUsuario}">
+                </span>
+
+            </p>
+
+
+            <p>
+
+                <strong>Departamento:</strong>
+
+                <span th:text="${docente.departamentoAcademico}">
+                </span>
+
+            </p>
+
+
+            <p>
+
+                <strong>Asignatura:</strong>
+
+                <span th:text="${docente.asignaturaAcademica}">
+                </span>
+
+            </p>
+
+            <br>
+
+
+            <form th:action="@{/docentes/eliminar/confirmar}"
+                  method="post">
+
+                <input type="hidden"
+                       name="idDocente"
+                       th:value="${docente.idDocente}">
+
+
+                <button type="submit"
+                        class="btn-delete">
+
+                    Confirmar eliminación
+
+                </button>
+
+
+                <a class="btn-secondary"
+                   th:href="@{/docentes/consultar}">
+
+                    Cancelar
+
+                </a>
+
+            </form>
+
+
+            <!-- MENSAJE DE ERROR -->
+            <div class="error-box"
+                 th:if="${mensaje}">
+
+                <span th:text="${mensaje}"></span>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-links">
+
+            <a th:href="@{/docentes}">
+                Inicio
+            </a>
+
+            <a th:href="@{/docentes/consultar}">
+                Docentes
+            </a>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

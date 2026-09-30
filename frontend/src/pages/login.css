@@ -1,0 +1,521 @@
+
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #333;
+}
+
+
+/* =========================================
+   PÁGINA
+========================================= */
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 5%;
+
+    background-color: #ffffff;
+
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.nav-left,
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+
+/* LOGO */
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    color: #0078d7;
+
+    text-decoration: none;
+}
+
+
+/* MENÚ */
+
+.nav-links {
+    list-style: none;
+
+    display: flex;
+
+    gap: 20px;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+
+    color: #333;
+
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #0078d7;
+}
+
+
+/* LOGIN */
+
+.login-link {
+    text-decoration: none;
+
+    color: #0078d7;
+
+    font-weight: 600;
+}
+
+
+/* BOTÓN REGISTRARSE */
+
+.btn-primary {
+    background: #0078d7;
+
+    color: #ffffff;
+
+    border: none;
+
+    padding: 10px 20px;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background: #005fa3;
+}
+
+
+/* =========================================
+   DROPDOWN
+========================================= */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    color: #333;
+
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+
+    position: absolute;
+
+    background-color: #ffffff;
+
+    min-width: 180px;
+
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+    z-index: 100;
+
+    border-radius: 6px;
+
+    top: 100%;
+
+    left: 0;
+
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: #333 !important;
+
+    padding: 12px 16px;
+
+    text-decoration: none;
+
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* =========================================
+   CONTENEDOR LOGIN
+========================================= */
+
+.login-container {
+    flex: 1;
+
+    display: flex;
+
+    justify-content: space-around;
+
+    align-items: center;
+
+    gap: 60px;
+
+    padding: 50px 10%;
+}
+
+
+/* =========================================
+   PARTE IZQUIERDA
+========================================= */
+
+.login-hero {
+    width: 45%;
+}
+
+.hero-box {
+    max-width: 500px;
+}
+
+.login-icon {
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+
+    border-radius: 50%;
+
+    background-color: #e6f5ff;
+
+    color: #0078d7;
+}
+
+.hero-box h2 {
+    font-size: 2rem;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+
+    color: #333;
+}
+
+.hero-box p {
+    font-size: 1.1rem;
+
+    line-height: 1.6;
+
+    color: #666;
+}
+
+
+/* =========================================
+   FORMULARIO
+========================================= */
+
+.login-form-section {
+    width: 100%;
+
+    max-width: 400px;
+
+    background: #f9f9f9;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form h3 {
+    text-align: center;
+
+    margin-bottom: 10px;
+
+    color: #333;
+
+    font-size: 1.5rem;
+}
+
+.login-description {
+    text-align: center;
+
+    color: #666;
+
+    line-height: 1.5;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   CAMPOS
+========================================= */
+
+.input-group {
+    display: flex;
+
+    flex-direction: column;
+
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    margin-bottom: 6px;
+
+    font-size: 0.95rem;
+
+    font-weight: 600;
+
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    background-color: #ffffff;
+
+    font-size: 1rem;
+
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: #0078d7;
+
+    box-shadow: 0 0 0 2px rgba(0, 120, 215, 0.1);
+}
+
+
+/* =========================================
+   RECUPERAR CONTRASEÑA
+========================================= */
+
+.forgot-link {
+    display: block;
+
+    margin: 5px 0 20px;
+
+    text-align: right;
+
+    color: #0078d7;
+
+    text-decoration: none;
+
+    font-size: 0.9rem;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   BOTÓN ACCEDER
+========================================= */
+
+.btn-submit {
+    width: 100%;
+
+    padding: 12px;
+
+    background: #0078d7;
+
+    color: #ffffff;
+
+    border: none;
+
+    border-radius: 8px;
+
+    font-size: 1rem;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: background 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: #005fa3;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    background: #f0f0f0;
+
+    padding: 20px;
+
+    text-align: center;
+
+    border-top: 1px solid #ddd;
+}
+
+.footer-links a {
+    margin: 0 15px;
+
+    text-decoration: none;
+
+    color: #555;
+
+    font-weight: 500;
+}
+
+.footer-links a:hover {
+    color: #0078d7;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 20px 5%;
+    }
+
+    .login-container {
+        padding: 40px 6%;
+
+        gap: 40px;
+    }
+
+    .login-hero {
+        width: 45%;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .navbar {
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+    .nav-left {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .nav-right {
+        justify-content: center;
+    }
+
+    .login-container {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 40px 6%;
+    }
+
+    .login-hero {
+        width: 100%;
+    }
+
+    .hero-box {
+        max-width: 600px;
+
+        margin: auto;
+    }
+
+    .login-icon {
+        margin: 0 auto 20px;
+    }
+
+    .login-form-section {
+        max-width: 400px;
+    }
+
+    .forgot-link {
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .nav-right {
+        flex-direction: column;
+    }
+
+    .btn-primary {
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .login-form-section {
+        padding: 25px 20px;
+    }
+
+    .hero-box h2 {
+        font-size: 1.7rem;
+    }
+}
+
